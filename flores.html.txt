@@ -1,0 +1,65 @@
+<flores.html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas para Ti 💛</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to top, #fff8dc, #ffecb3);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #444;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #d4a017;
+      text-align: center;
+      z-index: 2;
+    }
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 600px;
+      z-index: 2;
+    }
+    .flower {
+      position: absolute;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% {transform: translateY(-50px) rotate(0deg);}
+      100% {transform: translateY(110vh) rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+  <h1>💛 Mis flores amarillas eres tú 💛</h1>
+  <p>Feliz 21 de septiembre, amor. Si pudiera llenaría tu mundo de flores amarillas, porque eres mi sueño cumplido 🌻</p>
+
+  <script>
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.textContent = '🌻';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (3 + Math.random() * 5) + 's';
+      document.body.appendChild(flower);
+      setTimeout(() => {
+        flower.remove();
+      }, 8000);
+    }
+
+    setInterval(createFlower, 300);
+  </script>
+</body>
+</html>
